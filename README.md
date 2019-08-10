@@ -13,7 +13,7 @@ A task tracker made in C#
 7. Compare times of tasks with .CompareTo();
 8. Sort tasks by occurrence
 9. Convert to Unix timestamps in csv
-10.Handle "leap days"
+10. Handle "leap days"
 
 
 # Answer to Brief:
