@@ -1,5 +1,5 @@
 # TaskManager
-A task tracker made in C# 
+A task tracker made in C# where you can add daily tasks, with their duration and time of occurrence. The program will check if they overlap and will produce a csv with the output
 
 # Brief:
   Create a task tracking app which can:
