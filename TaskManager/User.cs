@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace TaskManager
 {
 	public class User
 	{
-		public readonly string FirstName, SecondName, LoginName, Password;
+		public readonly string FirstName;
 		public readonly DateTimeOffset BirthDate;
 		public List<Task> Tasks;
-		public User ( string fName, string sName, string lName, string pass, DateTimeOffset date )
+
+		public User ( string fName, DateTimeOffset birthdate )
 		{
 			FirstName = fName;
-			SecondName = sName;
-			LoginName = lName;
-			Password = pass;
-			BirthDate = date;
+			BirthDate = birthdate;
 			Tasks = new List<Task> ( );
+			Console.WriteLine ( FormatBirthdayResult ( GetDaysUntilNextBirthday ( ) ) );
 		}
 
 		public int GetDaysUntilNextBirthday ( )
@@ -32,5 +32,17 @@ namespace TaskManager
 
 			return ( int ) ( birthday - today ).TotalDays;
 		}
+
+		string FormatBirthdayResult ( int i )
+		{
+			if ( i == 0 )
+			{
+				return "Happy Birthday!";
+			}
+
+			return $"There are {i.ToString ( )} days until your birthday!";
+		}
+
+
 	}
 }
